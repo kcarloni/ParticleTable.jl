@@ -1,4 +1,5 @@
 module ParticleTable
+__precompile__(false)
 
 using Corpuscles
 using Corpuscles: pdgid, Particle
@@ -46,7 +47,12 @@ end
 
 # ========================
 
-decay_modes( p::Particle ) = error("load PyCall + pip install particletools to see decays")
+"""
+    decay_modes( p::Particle )
+
+Lists the decay modes of a given particle, using Anatoli Feydnitch's `particletools` python package.
+"""
+decay_modes( p ) = error("pip install particletools + load PyCall to see decays")
 export decay_modes 
 
 
