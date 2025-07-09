@@ -34,7 +34,7 @@ end
 
 # let's write a sub method to handle nuclei for the time being...
 function Corpuscles.Particle( id::Corpuscles.PDGID )  
-    if isnucleus( id )
+    if isnucleus( id ) && ! any( in.( id.value, values.( (Corpuscles.scikit_common, Corpuscles.more_common, Corpuscles.inv_catalog) ) ) )
         return Particle(; A=Corpuscles.A(id), Z=Corpuscles.Z(id) )
     else
         # default 
