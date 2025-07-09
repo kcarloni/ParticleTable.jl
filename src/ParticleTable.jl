@@ -31,6 +31,7 @@ Corpuscles.pdgid( N::Isotope ) = Corpuscles.pdgid(; A=N.A, Z=N.Z )
 function Corpuscles.Particle(; A, Z )
     return isotopes(Z,A)
 end
+Corpuscles.Particle( nt::@NamedTuple{A::Int64, Z::Int64} ) = Corpuscles.Particle(; nt... )
 
 # let's write a sub method to handle nuclei for the time being...
 function Corpuscles.Particle( id::Corpuscles.PDGID )  
