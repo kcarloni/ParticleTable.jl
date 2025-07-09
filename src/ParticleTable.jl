@@ -1,5 +1,4 @@
 module ParticleTable
-__precompile__(false)
 
 using Corpuscles
 using Corpuscles: pdgid, Particle
@@ -33,16 +32,14 @@ function Corpuscles.Particle(; A, Z )
     return isotopes(Z,A)
 end
 
-# let's overwrite this to handle nuclei for the time being...
-function Corpuscles.Particle( id::Corpuscles.ParticleID ) 
-    
+# let's write a sub method to handle nuclei for the time being...
+function Corpuscles.Particle( id::Corpuscles.PDGID )  
     if isnucleus( id )
         return Particle(; A=Corpuscles.A(id), Z=Corpuscles.Z(id) )
     else
         # default 
         return Corpuscles.catalog.particle_dict[Base.convert(PDGID, id)]
     end
-
 end
 
 # ========================
