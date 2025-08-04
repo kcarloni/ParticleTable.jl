@@ -7,10 +7,6 @@ version = "0.1.0"
 Corpuscles = "e78a0372-c628-4773-9c8d-eb17d149bf93"
 IsotopeTable = "301f09c9-9f3f-4b04-816f-ee47ab44b8cb"
 
-[compat]
-Corpuscles = "2.1.2"
-IsotopeTable = "0.1.0"
-
 [weakdeps]
 PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
 
