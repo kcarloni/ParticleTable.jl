@@ -6,7 +6,7 @@ using IsotopeTable # Corpuscles doesn't have nuclear isotope functionality yet
 
 export Particle
 export Isotope
-export pdgid
+export pdgid, PDGID
 
 Base.broadcastable( p::Particle ) = Ref(p)
 
@@ -50,7 +50,10 @@ end
 
 Lists the decay modes of a given particle, using Anatoli Feydnitch's `particletools` python package.
 """
-decay_modes( p ) = error("pip install particletools + load PyCall to see decays")
+decay_modes( p::Particle ) = error("pip install particletools + load PyCall to see decays")
+
+decay_modes( p_str::String ) = decay_modes( Particle(p_str) )
+
 export decay_modes 
 
 
