@@ -45,12 +45,14 @@ end
 
 # ========================
 
+# note to self: do not specify p type below! that will cause method re-definition during pre-compilation
+
 """
     decay_modes( p::Particle )
 
 Lists the decay modes of a given particle, using Anatoli Feydnitch's `particletools` python package.
 """
-decay_modes( p::Particle ) = error("pip install particletools + load PyCall to see decays")
+decay_modes( p ) = error("pip install particletools + load PyCall to see decays")
 
 decay_modes( p_str::String ) = decay_modes( Particle(p_str) )
 
