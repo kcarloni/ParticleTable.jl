@@ -27,3 +27,5 @@ docs/site/
 Manifest*.toml
 
 .DS_Store
+# CondaPkg-managed Python env (regenerated on first load)
+.CondaPkg/
